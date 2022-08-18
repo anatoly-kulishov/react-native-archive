@@ -1,0 +1,9 @@
+.husky
+**/node_modules/
+**/*.scss
+package*.json
+tsconfig.json
+.prettierignore
+*.png
+.gitignore
+.gitlab-ci.yml
