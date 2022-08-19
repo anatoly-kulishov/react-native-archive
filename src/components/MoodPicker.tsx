@@ -1,19 +1,22 @@
 import React from 'react';
-import {Image, Pressable, StyleSheet, View} from 'react-native';
-import {MoodOptionType} from "../shared/types";
-import {PressableArea} from "./PressableArea";
-import {theme} from "../shared/theme";
-import {AppText} from "./AppText";
-import Reanimated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
+import { Image, Pressable, StyleSheet, View } from 'react-native';
+import { MoodOptionType } from '../shared/types';
+import { PressableArea } from './PressableArea';
+import { theme } from '../shared/theme';
+import { AppText } from './AppText';
+import Reanimated, {
+  useAnimatedStyle,
+  withTiming,
+} from 'react-native-reanimated';
 
 const ReanimatedPressable = Reanimated.createAnimatedComponent(Pressable);
 
 const moodOptions: MoodOptionType[] = [
-  {emoji: '🧑‍💻', description: 'studious'},
-  {emoji: '🤔', description: 'pensive'},
-  {emoji: '😊', description: 'happy'},
-  {emoji: '🥳', description: 'celebratory'},
-  {emoji: '😤', description: 'frustrated'},
+  { emoji: '🧑‍💻', description: 'studious' },
+  { emoji: '🤔', description: 'pensive' },
+  { emoji: '😊', description: 'happy' },
+  { emoji: '🥳', description: 'celebratory' },
+  { emoji: '😤', description: 'frustrated' },
 ];
 
 type MoodPickerProps = {
@@ -22,14 +25,14 @@ type MoodPickerProps = {
 
 const imageSrc = require('../../assets/butterflies.png');
 
-export const MoodPicker: React.FC<MoodPickerProps> = ({onSelect}) => {
+export const MoodPicker: React.FC<MoodPickerProps> = ({ onSelect }) => {
   const [selectedMood, setSelectedMood] = React.useState<MoodOptionType>();
   const [hasSelected, setHasSelected] = React.useState(false);
 
   const buttonStyle = useAnimatedStyle(
     () => ({
       opacity: selectedMood ? withTiming(1) : withTiming(0.5),
-      transform: [{scale: selectedMood ? withTiming(1) : 0.8}],
+      transform: [{ scale: selectedMood ? withTiming(1) : 0.8 }],
     }),
     [selectedMood],
   );
@@ -45,9 +48,13 @@ export const MoodPicker: React.FC<MoodPickerProps> = ({onSelect}) => {
   if (hasSelected) {
     return (
       <View style={styles.container}>
-        <Image source={imageSrc} style={styles.image}/>
-        <PressableArea style={styles.button} onPress={() => setHasSelected(false)}>
-          <AppText fontFamily="bold" style={styles.buttonText}>Back</AppText>
+        <Image source={imageSrc} style={styles.image} />
+        <PressableArea
+          style={styles.button}
+          onPress={() => setHasSelected(false)}>
+          <AppText fontFamily="bold" style={styles.buttonText}>
+            Back
+          </AppText>
         </PressableArea>
       </View>
     );
@@ -55,7 +62,9 @@ export const MoodPicker: React.FC<MoodPickerProps> = ({onSelect}) => {
 
   return (
     <View style={styles.container}>
-      <AppText fontFamily="bold" style={styles.heading}>How are you right now?</AppText>
+      <AppText fontFamily="bold" style={styles.heading}>
+        How are you right now?
+      </AppText>
       <View style={styles.moodList}>
         {moodOptions.map(option => (
           <View key={option.emoji}>
@@ -78,7 +87,9 @@ export const MoodPicker: React.FC<MoodPickerProps> = ({onSelect}) => {
       <ReanimatedPressable
         style={[styles.button, buttonStyle]}
         onPress={handleSelect}>
-        <AppText fontFamily="bold" style={styles.buttonText}>Choose</AppText>
+        <AppText fontFamily="bold" style={styles.buttonText}>
+          Choose
+        </AppText>
       </ReanimatedPressable>
     </View>
   );
@@ -87,7 +98,7 @@ export const MoodPicker: React.FC<MoodPickerProps> = ({onSelect}) => {
 const styles = StyleSheet.create({
   moodText: {
     fontSize: 24,
-    color: theme.colorPurple
+    color: theme.colorPurple,
   },
   moodList: {
     flexDirection: 'row',

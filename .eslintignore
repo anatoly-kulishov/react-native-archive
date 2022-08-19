@@ -5,3 +5,4 @@ node_modules
 assets/libs
 .gitignore
 .gitlab-ci.yml
+!/react-native.config.js
