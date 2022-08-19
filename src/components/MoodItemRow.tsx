@@ -2,11 +2,11 @@ import React from 'react';
 import { LayoutAnimation, StyleSheet, View } from 'react-native';
 import { useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
 import format from 'date-fns/format';
-import { MoodOptionWithTimestamp } from '../shared/types';
+import { MoodOptionWithTimestamp } from '../types';
 import { useAppContext } from '../App.provider';
-import { PressableArea } from './PressableArea';
-import { theme } from '../shared/theme';
-import { AppText } from './AppText';
+import { PressableArea } from './ui/PressableArea';
+import { theme } from '../constants/theme';
+import { AppText } from './ui/AppText';
 
 type MoodItemRowProps = {
   item: MoodOptionWithTimestamp;

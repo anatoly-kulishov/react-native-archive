@@ -1,11 +1,17 @@
 import React from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { AnalyticsIcon, HistoryIcon, HomeIcon } from '../components/Icons';
-import { Analytics } from './Analytics.screen';
-import { History } from './History.screen';
-import { theme } from '../shared/theme';
-import { Home } from './Home.screen';
+import {
+  AnalyticsIcon,
+  HistoryIcon,
+  HomeIcon,
+  UIKitIcon,
+} from '../components/ui/Icons';
+import { Analytics } from '../screens/Analytics.screen';
+import { History } from '../screens/History.screen';
+import { Home } from '../screens/Home.screen';
+import { theme } from '../constants/theme';
+import { UIKit } from '../screens/UIKit.screen';
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -31,6 +37,10 @@ export const BottomTabsNavigator: React.FC = () => {
             return <AnalyticsIcon color={color} size={size} />;
           }
 
+          if (route.name === 'UIKit') {
+            return <UIKitIcon color={color} size={size} />;
+          }
+
           return null;
         },
       })}>
@@ -48,6 +58,11 @@ export const BottomTabsNavigator: React.FC = () => {
         name="Analytics"
         component={Analytics}
         options={{ title: 'Fancy Charts' }}
+      />
+      <BottomTabs.Screen
+        name="UIKit"
+        component={UIKit}
+        options={{ title: 'UI Kit' }}
       />
     </BottomTabs.Navigator>
   );

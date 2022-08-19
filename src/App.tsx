@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import React from 'react';
 import { Platform, UIManager } from 'react-native';
-import { BottomTabsNavigator } from './screens/BottomTabs.navigator';
+import { BottomTabsNavigator } from './routes/BottomTabs.navigator';
 import { NavigationContainer } from '@react-navigation/native';
 import { AppProvider } from './App.provider';
 

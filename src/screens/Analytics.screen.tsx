@@ -3,7 +3,7 @@ import { groupBy } from 'lodash';
 import { VictoryPie } from 'victory-native';
 import { StyleSheet, View } from 'react-native';
 import { useAppContext } from '../App.provider';
-import { theme } from '../shared/theme';
+import { theme } from '../constants/theme';
 
 export const Analytics: React.FC = () => {
   const appContext = useAppContext();

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Text, TextProps } from 'react-native';
-import { theme } from '../shared/theme';
+import { theme } from '../../constants/theme';
 
 type AppTextType = TextProps & {
   fontFamily?: 'bold' | 'regular' | 'light';

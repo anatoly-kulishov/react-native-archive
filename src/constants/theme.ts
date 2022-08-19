@@ -16,4 +16,6 @@ export const theme = {
   fontSize8: 8,
   fontSize12: 12,
   fontSize14: 14,
+  fontSize16: 16,
+  fontSize18: 18,
 };

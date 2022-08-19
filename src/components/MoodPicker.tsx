@@ -1,9 +1,9 @@
 import React from 'react';
 import { Image, Pressable, StyleSheet, View } from 'react-native';
-import { MoodOptionType } from '../shared/types';
-import { PressableArea } from './PressableArea';
-import { theme } from '../shared/theme';
-import { AppText } from './AppText';
+import { MoodOptionType } from '../types';
+import { PressableArea } from './ui/PressableArea';
+import { theme } from '../constants/theme';
+import { AppText } from './ui/AppText';
 import Reanimated, {
   useAnimatedStyle,
   withTiming,
