@@ -5,7 +5,7 @@ import format from 'date-fns/format';
 import { MoodOptionWithTimestamp } from '../shared/types';
 import { useAppContext } from '../App.provider';
 import { PressableArea } from './ui/PressableArea';
-import { themeConfig } from '../configs/theme.config';
+import { theme } from '../configs/theme';
 import { AppText } from './ui/AppText';
 
 type MoodItemRowProps = {
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   },
   moodDate: {
     textAlign: 'center',
-    color: themeConfig.colorLavender,
+    color: theme.colorLavender,
   },
   moodItem: {
     backgroundColor: 'white',
@@ -65,13 +65,13 @@ const styles = StyleSheet.create({
   },
   moodDescription: {
     fontSize: 18,
-    color: themeConfig.colorPurple,
+    color: theme.colorPurple,
   },
   iconAndDescription: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   deleteText: {
-    color: themeConfig.colorRed,
+    color: theme.colorRed,
   },
 });

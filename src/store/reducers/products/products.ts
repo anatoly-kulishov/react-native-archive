@@ -1,15 +1,17 @@
 import { ProductsActionType } from '../../action-types';
 import { ProductsAction } from '../../actions';
-import { IProduct } from '../../../shared/types';
+import { IProduct, Nullable, RequestStatusEnum } from '../../../shared/types';
 
 export interface IProductsInitialState {
   allProducts: IProduct[];
-  loading: boolean;
+  status: Nullable<RequestStatusEnum>;
+  error: Nullable<string>;
 }
 
 const initialState = {
   allProducts: [],
-  loading: true,
+  status: null,
+  error: null,
 };
 
 export const productsReducer = (
@@ -17,11 +19,32 @@ export const productsReducer = (
   action: ProductsAction,
 ): IProductsInitialState => {
   switch (action.type) {
-    case ProductsActionType.LOAD_ALL_PRODUCTS:
+    case ProductsActionType.GET_ALL_PRODUCTS_START:
+      return {
+        ...state,
+        status: RequestStatusEnum.LOADING,
+      };
+    case ProductsActionType.GET_ALL_PRODUCTS_ACCEPTED:
+      return {
+        ...state,
+        status: RequestStatusEnum.ACCEPTED,
+      };
+    case ProductsActionType.GET_ALL_PRODUCTS_DENIED:
+      return {
+        ...state,
+        status: RequestStatusEnum.DENIED,
+        error: action.payload,
+      };
+    case ProductsActionType.SAVE_ALL_PRODUCTS:
       return {
         ...state,
         allProducts: action.payload,
-        loading: false,
+        status: RequestStatusEnum.DENIED,
+      };
+    case ProductsActionType.CLEAR_ALL_PRODUCTS:
+      return {
+        ...state,
+        allProducts: [],
       };
     default:
       return state;

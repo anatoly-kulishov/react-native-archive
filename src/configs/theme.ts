@@ -1,4 +1,4 @@
-export const themeConfig = {
+export const theme = {
   /** colors **/
   colorPurple: '#454C73',
   colorRed: '#dc3545',
@@ -6,6 +6,7 @@ export const themeConfig = {
   colorWhite: '#fff',
   colorBlue: '#1D84B5',
   colorGrey: '#8E9AAF',
+  colorBlack: '#000',
 
   /** fonts **/
   fontFamilyBold: 'Kalam-Bold',

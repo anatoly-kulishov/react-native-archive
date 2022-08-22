@@ -4,25 +4,19 @@ export type Nullable<T> = T | null;
 export type Undetectable<T> = T | undefined;
 export type HttpMethods = 'GET' | 'POST' | 'PUT' | 'DELETE';
 
-export type MoodOptionType = {
-  emoji: string;
-  description: string;
-};
+export enum MainRoutesEnum {
+  HOME = 'home',
+  HISTORY = 'history',
+  ANALYTICS = 'analytics',
+  UIKIT = 'uikit',
+}
 
-export type MoodOptionWithTimestamp = {
-  mood: MoodOptionType;
-  timestamp: number;
-};
+export enum RequestStatusEnum {
+  LOADING = 'loading',
+  ACCEPTED = 'accepted',
+  DENIED = 'denied',
+}
 
 export interface IChildren {
   children?: React.ReactNode;
-}
-
-export interface IProduct {
-  id: number;
-  title: string;
-  price: string;
-  category: string;
-  description: string;
-  image: string;
 }

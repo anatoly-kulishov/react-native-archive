@@ -1,13 +1,13 @@
 import React from 'react';
 import { Image, Pressable, StyleSheet, View } from 'react-native';
-import { MoodOptionType } from '../shared/types';
-import { PressableArea } from './ui/PressableArea';
-import { themeConfig } from '../configs/theme.config';
-import { AppText } from './ui/AppText';
 import Reanimated, {
   useAnimatedStyle,
   withTiming,
 } from 'react-native-reanimated';
+import { PressableArea } from './ui/PressableArea';
+import { theme } from '../configs/theme';
+import { AppText } from './ui/AppText';
+import { MoodOptionType } from '../shared/types/mood-option.types';
 
 const ReanimatedPressable = Reanimated.createAnimatedComponent(Pressable);
 
@@ -98,7 +98,7 @@ export const MoodPicker: React.FC<MoodPickerProps> = ({ onSelect }) => {
 const styles = StyleSheet.create({
   moodText: {
     fontSize: 24,
-    color: themeConfig.colorPurple,
+    color: theme.colorPurple,
   },
   moodList: {
     flexDirection: 'row',
@@ -114,18 +114,18 @@ const styles = StyleSheet.create({
   },
   selectedMoodItem: {
     borderWidth: 2,
-    backgroundColor: themeConfig.colorPurple,
-    borderColor: themeConfig.colorWhite,
+    backgroundColor: theme.colorPurple,
+    borderColor: theme.colorWhite,
   },
   descriptionText: {
-    color: themeConfig.colorPurple,
+    color: theme.colorPurple,
     fontSize: 10,
     textAlign: 'center',
   },
   container: {
     height: 250,
     borderWidth: 2,
-    borderColor: themeConfig.colorPurple,
+    borderColor: theme.colorPurple,
     margin: 10,
     borderRadius: 10,
     padding: 20,
@@ -136,17 +136,17 @@ const styles = StyleSheet.create({
     fontSize: 20,
     letterSpacing: 1,
     textAlign: 'center',
-    color: themeConfig.colorWhite,
+    color: theme.colorWhite,
   },
   button: {
-    backgroundColor: themeConfig.colorPurple,
+    backgroundColor: theme.colorPurple,
     width: 150,
     borderRadius: 20,
     alignSelf: 'center',
     padding: 10,
   },
   buttonText: {
-    color: themeConfig.colorWhite,
+    color: theme.colorWhite,
     textAlign: 'center',
   },
   image: {

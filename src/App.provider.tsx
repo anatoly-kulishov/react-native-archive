@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
-  IChildren,
   MoodOptionType,
   MoodOptionWithTimestamp,
-} from './shared/types';
+} from './shared/types/mood-option.types';
+import { IChildren } from './shared/types';
 
 const storageKey = 'my-app-data';
 
