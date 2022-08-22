@@ -3,7 +3,7 @@ import { groupBy } from 'lodash';
 import { VictoryPie } from 'victory-native';
 import { StyleSheet, View } from 'react-native';
 import { useAppContext } from '../App.provider';
-import { theme } from '../constants/theme';
+import { themeConfig } from '../configs/theme.config';
 
 export const Analytics: React.FC = () => {
   const appContext = useAppContext();
@@ -22,11 +22,11 @@ export const Analytics: React.FC = () => {
         radius={150}
         innerRadius={50}
         colorScale={[
-          theme.colorPurple,
-          theme.colorLavender,
-          theme.colorBlue,
-          theme.colorGrey,
-          theme.colorWhite,
+          themeConfig.colorPurple,
+          themeConfig.colorLavender,
+          themeConfig.colorBlue,
+          themeConfig.colorGrey,
+          themeConfig.colorWhite,
         ]}
         style={{ labels: { fontSize: 30 } }}
         data={data}

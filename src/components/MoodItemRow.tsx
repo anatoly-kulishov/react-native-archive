@@ -2,10 +2,10 @@ import React from 'react';
 import { LayoutAnimation, StyleSheet, View } from 'react-native';
 import { useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
 import format from 'date-fns/format';
-import { MoodOptionWithTimestamp } from '../types';
+import { MoodOptionWithTimestamp } from '../shared/types';
 import { useAppContext } from '../App.provider';
 import { PressableArea } from './ui/PressableArea';
-import { theme } from '../constants/theme';
+import { themeConfig } from '../configs/theme.config';
 import { AppText } from './ui/AppText';
 
 type MoodItemRowProps = {
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   },
   moodDate: {
     textAlign: 'center',
-    color: theme.colorLavender,
+    color: themeConfig.colorLavender,
   },
   moodItem: {
     backgroundColor: 'white',
@@ -65,13 +65,13 @@ const styles = StyleSheet.create({
   },
   moodDescription: {
     fontSize: 18,
-    color: theme.colorPurple,
+    color: themeConfig.colorPurple,
   },
   iconAndDescription: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   deleteText: {
-    color: theme.colorRed,
+    color: themeConfig.colorRed,
   },
 });

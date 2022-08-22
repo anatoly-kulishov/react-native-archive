@@ -1,4 +1,4 @@
-export const theme = {
+export const themeConfig = {
   /** colors **/
   colorPurple: '#454C73',
   colorRed: '#dc3545',

@@ -10,7 +10,7 @@ import {
 import { Analytics } from '../screens/Analytics.screen';
 import { History } from '../screens/History.screen';
 import { Home } from '../screens/Home.screen';
-import { theme } from '../constants/theme';
+import { themeConfig } from '../configs/theme.config';
 import { UIKit } from '../screens/UIKit.screen';
 
 const BottomTabs = createBottomTabNavigator();
@@ -19,10 +19,10 @@ export const BottomTabsNavigator: React.FC = () => {
   return (
     <BottomTabs.Navigator
       screenOptions={({ route }) => ({
-        tabBarActiveTintColor: theme.colorBlue,
-        tabBarInactiveTintColor: theme.colorGrey,
+        tabBarActiveTintColor: themeConfig.colorBlue,
+        tabBarInactiveTintColor: themeConfig.colorGrey,
         tabBarShowLabel: false,
-        headerTitleStyle: { fontFamily: theme.fontFamilyBold },
+        headerTitleStyle: { fontFamily: themeConfig.fontFamilyBold },
         // eslint-disable-next-line react/no-unstable-nested-components
         tabBarIcon: ({ color, size }) => {
           if (route.name === 'Home') {

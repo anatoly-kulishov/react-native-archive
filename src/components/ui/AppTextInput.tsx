@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { StyleSheet, TextInput, TextInputProps, View } from 'react-native';
 import { AppText } from './AppText';
-import { theme } from '../../constants/theme';
+import { themeConfig } from '../../configs/theme.config';
 
 interface IAppTextareaProps extends TextInputProps {
   label?: string;
@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
     height: 40,
     marginBottom: 12,
     borderWidth: 1,
-    borderColor: theme.colorGrey,
-    backgroundColor: theme.colorWhite,
+    borderColor: themeConfig.colorGrey,
+    backgroundColor: themeConfig.colorWhite,
     padding: 10,
   },
   textArea: {
@@ -47,8 +47,8 @@ const styles = StyleSheet.create({
     textAlignVertical: 'top',
     marginBottom: 12,
     borderWidth: 1,
-    borderColor: theme.colorGrey,
-    backgroundColor: theme.colorWhite,
+    borderColor: themeConfig.colorGrey,
+    backgroundColor: themeConfig.colorWhite,
     padding: 10,
   },
   label: {},

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Text, TextProps } from 'react-native';
-import { theme } from '../../constants/theme';
+import { themeConfig } from '../../configs/theme.config';
 
 type AppTextType = TextProps & {
   fontFamily?: 'bold' | 'regular' | 'light';
@@ -14,13 +14,13 @@ export const AppText: React.FC<AppTextType> = ({
 }) => {
   const fontStyle = useMemo(() => {
     if (fontFamily === 'bold') {
-      return { fontFamily: theme.fontFamilyBold };
+      return { fontFamily: themeConfig.fontFamilyBold };
     }
     if (fontFamily === 'regular') {
-      return { fontFamily: theme.fontFamilyRegular };
+      return { fontFamily: themeConfig.fontFamilyRegular };
     }
     if (fontFamily === 'light') {
-      return { fontFamily: theme.fontFamilyLight };
+      return { fontFamily: themeConfig.fontFamilyLight };
     }
   }, [fontFamily]);
 
